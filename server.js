@@ -7,7 +7,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/api/phones', (req, res) => {
   res.status(200).json({
-    phones: phones
+    phones
   });
 });
 
