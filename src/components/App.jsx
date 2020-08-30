@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
+import {Switch, Route} from 'react-router-dom';
 import axios from 'axios';
+import PhoneCatalogue from './PhoneCatalogue.jsx';
+import PhoneDetail from './PhoneDetail.jsx';
+// import Header from './Header.jsx';
+// import Footer from './Footer.jsx';
 
 // function App() {
 //   React.useEffect(() => {
@@ -26,12 +31,29 @@ class App extends Component {
       })
   }
   render() {
+    const { phones } = this.state;
     return (
       <>
         <h1>Phone Catalogue</h1>
-        <ul>
-          {this.state.phones.map((phone, i) => <li id={i} key={phone.id}>{phone.name}</li>)}
-        </ul>
+        {/* <Header/> */}
+        <Switch>
+          <Route exact path="/" render={ ()=>{
+            return (
+              <PhoneCatalogue phones={phones} />
+            );
+          }} />
+          <Route path="/phone-detail/:phoneId" render={routerProps => {
+            return (
+              <PhoneDetail 
+                routerProps={routerProps}
+                phones={phones}
+              />
+            );
+          }}/>
+        </Switch>
+        {/* <Footer/> */}
+
+        
       </>
     )
   }
