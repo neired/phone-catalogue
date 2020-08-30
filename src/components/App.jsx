@@ -8,27 +8,28 @@ import Footer from './Footer.jsx';
 
 class App extends Component {
   state = {
-    phones: []
+    phones: [],
+    loading: true
   }
   componentDidMount() {
     axios.get('http://localhost:3000/api/phones')
       .then(res => {
         const phones = JSON.parse(JSON.stringify(res.data.phones));
-        this.setState({phones: phones})
+        this.setState({phones: phones, loading: false})
       })
       .catch(err => {
         console.log(err);
       })
   }
   render() {
-    const { phones } = this.state;
+    const { phones, loading } = this.state;
     return (
       <>
         <Header/>
         <Switch>
           <Route exact path="/" render={ ()=>{
             return (
-              <PhoneCatalogue phones={phones} />
+              <PhoneCatalogue loading={loading} phones={phones} />
             );
           }} />
           <Route path="/phone-detail/:phoneId" render={routerProps => {

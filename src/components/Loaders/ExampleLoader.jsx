@@ -22,7 +22,7 @@ class ExampleLoader extends React.Component {
   render() {
     return (
       <div className="sweet-loading">
-        <ClipLoader
+        <GridLoader
           css={override}
           size={150}
           color={"#123abc"}
