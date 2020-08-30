@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-
+import PhoneCard from './PhoneCard.jsx';
 class PhoneCatalogue extends React.Component {
   render() {
     const {phones} = this.props;
@@ -11,7 +11,11 @@ class PhoneCatalogue extends React.Component {
             return ( 
             <li id={phone.id} key={phone.id}>
               <Link to={`/phone-detail/${phone.id}`}>
-                {phone.name}
+                <PhoneCard
+                  name={phone.name}
+                  price={phone.price}
+                  imageFileName={phone.imageFileName}
+                />
               </Link>
             </li>
             )}

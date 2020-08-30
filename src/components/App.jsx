@@ -3,8 +3,8 @@ import {Switch, Route} from 'react-router-dom';
 import axios from 'axios';
 import PhoneCatalogue from './PhoneCatalogue.jsx';
 import PhoneDetail from './PhoneDetail.jsx';
-// import Header from './Header.jsx';
-// import Footer from './Footer.jsx';
+import Header from './Header.jsx';
+import Footer from './Footer.jsx';
 
 // function App() {
 //   React.useEffect(() => {
@@ -34,8 +34,7 @@ class App extends Component {
     const { phones } = this.state;
     return (
       <>
-        <h1>Phone Catalogue</h1>
-        {/* <Header/> */}
+        <Header/>
         <Switch>
           <Route exact path="/" render={ ()=>{
             return (
@@ -51,7 +50,7 @@ class App extends Component {
             );
           }}/>
         </Switch>
-        {/* <Footer/> */}
+        <Footer/>
 
         
       </>
