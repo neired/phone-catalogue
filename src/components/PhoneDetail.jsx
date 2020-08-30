@@ -26,6 +26,10 @@ const PhoneDetail = props => {
         </div>
       </div>
     )
+  } else {
+    return (
+      <p>Error: Phone not found</p>
+    )
   }
 }
 
