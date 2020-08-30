@@ -5,16 +5,17 @@ class PhoneCatalogue extends React.Component {
   render() {
     const {phones} = this.props;
     return (
-      <ul>
+      <ul className="card__list">
         {phones
           .map((phone, i) => {
             return ( 
-            <li id={phone.id} key={phone.id}>
-              <Link to={`/phone-detail/${phone.id}`}>
+            <li className="card" id={phone.id} key={phone.id}>
+              <Link to={`/phone-detail/${phone.id}`} className="card__link">
                 <PhoneCard
                   name={phone.name}
                   price={phone.price}
                   imageFileName={phone.imageFileName}
+                  manufacturer={phone.manufacturer}
                 />
               </Link>
             </li>

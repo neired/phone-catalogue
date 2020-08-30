@@ -6,16 +6,6 @@ import PhoneDetail from './PhoneDetail.jsx';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 
-// function App() {
-//   React.useEffect(() => {
-//     getPhones();
-//   }, [])
-//   async function getPhones() {
-//     const url = 'http://localhost:3000/api/phones';
-//     const response = await axios.get(url)
-//     console.log(response.data)
-//   }
-// }
 class App extends Component {
   state = {
     phones: []
