@@ -5,5 +5,5 @@
       "presets": [["@babel/preset-react", { "development": true }]]
     }
   },
-  "plugins": ["@babel/plugin-proposal-class-properties"]
+  "plugins": ["@babel/plugin-proposal-class-properties", "emotion"]
 }
