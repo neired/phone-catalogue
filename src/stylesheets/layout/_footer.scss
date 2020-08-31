@@ -15,7 +15,7 @@
     color: $white;
     font-size: 14px;
   }
-  @media all and (min-width: 768px) {
+  @media all and (min-width: $m) {
     padding-top: 0;
     flex-direction: row;
     justify-content: space-around;

@@ -1,6 +1,6 @@
 .header {
   padding: 20px 20px;
-  @media all and (min-width: 768px) {
+  @media all and (min-width: $m) {
     padding: 40px 20px;
   }
 }

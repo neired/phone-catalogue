@@ -5,7 +5,7 @@
   flex-direction: column;
   max-width: 650px;
   margin: 20px 40px 40px 40px;
-  @media all and (min-width: 960px) {
+  @media all and (min-width: $l) {
     height: 500px;
     align-items: center;
     flex-direction: row;
@@ -25,7 +25,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  @media all and (min-width: 960px) {
+  @media all and (min-width: $l) {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
@@ -44,7 +44,7 @@
 .detail__color-container {
   display: flex;
   align-items: center;
-  @media all and (min-width: 960px) {
+  @media all and (min-width: $l) {
     margin-left: 0;
   }
 }
@@ -58,14 +58,14 @@
 .detail__description {
   line-height: 25px;
   text-align: center;
-  @media all and (min-width: 960px) {
+  @media all and (min-width: $l) {
     text-align: start;
   }
 }
 .detail__specs-container {
   display: flex;
   flex-direction: column;
-  @media all and (min-width: 768px) {
+  @media all and (min-width: $m) {
     flex-direction: row;
   }
 }
