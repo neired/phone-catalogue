@@ -14,7 +14,7 @@
     grid-template-columns: auto auto auto;
   }
   @media all and (min-width: 1280px) {
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
   }
   .card {
     &:hover {
@@ -45,20 +45,18 @@
 .card__info-container {
   width: 160px;
 }
-.card__name {
-  padding-bottom: 25px;
-  text-align: center;
-}
 .card__price {
   position: absolute;
   width: 115px;
-  background: $primary;
+  background: linear-gradient(336deg, $secondary 0%, $secondary-dark 100%);
   padding: 7px 20px;
   text-align: center;
   display: inline-block;
-  font-size: 24px;
   border-radius: 8px;
-  margin-top: -13px;
+  margin-top: -7px;
   margin-left: 75px;
-  box-shadow: 6px 6px 14px -9px $primary;
+  box-shadow: 6px 6px 14px -9px $secondary;
+  @media all and (min-width: 768px) {
+    margin-top: -13px;
+  }
 }

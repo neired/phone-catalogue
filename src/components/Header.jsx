@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = props => {
   return (
-    <header className="header text-dark">
-      <h1 className="header__title title">Phone Catalogue</h1>
+    <header className="header">
+      <Link to="/" className="header__title text-dark text-center">
+        <h1 className="title title-primary">Phone Catalogue</h1>
+      </Link>
     </header>
   )
 }

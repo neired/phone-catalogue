@@ -1,14 +1,15 @@
 .detail {
+  position: relative;
   padding: 40px;
   display: flex;
   flex-direction: column;
-  max-width: 680px;
-  margin: 0 40px;
-  @media all and (min-width: 768px) {
-    flex-direction: row;
-    max-width: 900px;
+  max-width: 650px;
+  margin: 20px 40px 40px 40px;
+  @media all and (min-width: 960px) {
     height: 500px;
     align-items: center;
+    flex-direction: row;
+    max-width: 900px;
   }
 }
 .detail__img {
@@ -16,18 +17,25 @@
 }
 .detail__info {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .detail__title {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  @media all and (min-width: 960px) {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 .detail__price {
   position: absolute;
-  background: $secondary;
+  background: linear-gradient(336deg, $secondary 0%, $secondary-dark 100%);
   padding: 14px 20px;
   display: inline-block;
-  font-size: 34px;
   border-radius: 8px;
   right: -60px;
   top: -60px;
@@ -35,8 +43,10 @@
 }
 .detail__color-container {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+  @media all and (min-width: 960px) {
+    margin-left: 0;
+  }
 }
 .detail__color-circle {
   width: 15px;
@@ -45,11 +55,12 @@
   border: 1px solid $grey;
   margin-left: 5px;
 }
-.detail__color {
-
-}
 .detail__description {
-
+  line-height: 25px;
+  text-align: center;
+  @media all and (min-width: 960px) {
+    text-align: start;
+  }
 }
 .detail__specs-container {
   display: flex;
@@ -70,4 +81,14 @@
 }
 .detail__specs-text {
   margin-top: 10px;
+}
+.detail__back-icon {
+  margin-left: 40px;
+  position: absolute;
+  top: -10px;
+  left: -50px;
+  transition: transform .4s;
+  &:hover {
+    transform: scale(1.5);
+  }
 }
