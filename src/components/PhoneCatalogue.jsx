@@ -13,7 +13,7 @@ class PhoneCatalogue extends React.Component {
   render() {
     const {phones, loading} = this.props;
     return (
-      <>
+      <main>
       <GridLoader
         css={override}
         size={30}
@@ -37,7 +37,7 @@ class PhoneCatalogue extends React.Component {
             )}
           )}
       </ul>
-      </>
+      </main>
     )
 
   }

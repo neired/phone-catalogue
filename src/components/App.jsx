@@ -10,7 +10,8 @@ import Footer from './Footer.jsx';
 class App extends Component {
   state = {
     phones: [],
-    loading: true
+    loading: true,
+    error: null
   }
   componentDidMount() {
     axios.get('http://localhost:3000/api/phones')
@@ -19,7 +20,8 @@ class App extends Component {
         this.setState({phones: phones, loading: false})
       })
       .catch(err => {
-        console.log(err);
+        this.setState({error: err});
+        console.log(this.state.error);
       })
   }
   render() {

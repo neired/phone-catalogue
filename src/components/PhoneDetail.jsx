@@ -10,38 +10,38 @@ const PhoneDetail = props => {
   if (phone[0]) {
     const { name, manufacturer, description, color, price, imageFileName, screen, processor, ram } = phone[0];
     return (
-      <>
+      <main>
         <Link to="/">Back</Link>
-        <div className="detail">
-          <div><img className="detail__img" src={`../assets/${imageFileName}`} alt={name}></img></div>
-          <div className="detail__info">
-            <div className="detail__title">
-              <h2 className="">{name}</h2>
-              <p className="">{manufacturer}</p>
-              <p className="">{price}</p>
+        <div className="detail card">
+          <div><img className="detail__img" src={`/assets/${imageFileName}`} alt={name}></img></div>
+          <div className="detail__info py-20">
+            <div className="detail__title py-20">
+              <h2 className="text-dark mx-0">{name}</h2>
+              <p className="text-dark mx-0">{manufacturer}</p>
+              <p className="text-dark mx-0">{price}</p>
             </div>
             <div className="detail__color-container">
-              <div className="detail__color-circle"></div>
-              <p className="detail__color">{color}</p>
+              <p className="detail__color text-dark mx-0">Color: </p>
+              <div className={`bg-${color} detail__color-circle mx-0`}></div>
             </div>
-            <p className="detail__description">{description}</p>
-            <div className="detail__specs-container">
-              <div>
-                <div className="detail__specs-icon"></div>
-                <p className="detail__specs-text">{screen}</p>
+            <p className="detail__description text-dark py-20">{description}</p>
+            <div className="detail__specs-container py-20">
+              <div className="detail__spec">
+                <i className="fas fa-mobile-alt"></i>
+                <p className="detail__specs-text text-dark">{screen}</p>
               </div>
-              <div>
-                <div className="detail__specs-icon"></div>
-                <p className="detail__specs-text">{processor}</p>
+              <div className="detail__spec">
+                <i className="fas fa-microchip"></i>
+                <p className="detail__specs-text text-dark">{processor}</p>
               </div>
-              <div>
-                <div className="detail__specs-icon"></div>
-                <p className="detail__specs-text">{ram}</p>
+              <div className="detail__spec">
+                <i className="fas fa-memory"></i>
+                <p className="detail__specs-text text-dark">{ram}</p>
               </div>
             </div>
           </div>
         </div>
-      </>
+      </main>
     )
   } else {
     return (
