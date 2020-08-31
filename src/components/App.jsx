@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Switch, Route} from 'react-router-dom';
 import axios from 'axios';
-import '../stylesheets/App.scss';
+import '../stylesheets/index.scss';
 import PhoneCatalogue from './PhoneCatalogue.jsx';
 import PhoneDetail from './PhoneDetail.jsx';
 import Header from './Header.jsx';
@@ -43,8 +43,6 @@ class App extends Component {
           }}/>
         </Switch>
         <Footer/>
-
-        
       </>
     )
   }

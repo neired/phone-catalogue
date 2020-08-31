@@ -11,7 +11,7 @@ const PhoneDetail = props => {
     const { name, manufacturer, description, color, price, imageFileName, screen, processor, ram } = phone[0];
     return (
       <>
-        <Link to="/" className="app__back">Volver</Link>
+        <Link to="/">Back</Link>
         <div className="detail">
           <div><img className="detail__img" src={`../assets/${imageFileName}`} alt={name}></img></div>
           <div className="detail__info">
@@ -46,7 +46,7 @@ const PhoneDetail = props => {
   } else {
     return (
       <>
-        <Link to="/" className="app__back">Volver</Link>
+        <Link to="/">Back</Link>
         <div className="detail">
           <div><img className="detail__img" src='PLACEHOLDER!!!' alt='placeholder'></img></div>
           <div className="detail__info">
