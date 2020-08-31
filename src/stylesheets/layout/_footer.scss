@@ -1,6 +1,9 @@
 .footer {
     background-color: $primary-light;
     width: 100vw;
+    height: 100px;
+    display: flex;
+    align-items: center;
 }
 .footer__logo {
     

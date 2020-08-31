@@ -1,15 +1,24 @@
 .text-dark {
-    color: $black;
+  color: $black;
 }
 .text-grey {
-    color: $grey;
+  color: $grey;
 }
 .text-light {
-    color: $white;
+  color: $white;
 }
 .text-primary {
-    color: $primary;
+  color: $primary;
 }
-.text.secondary {
-    color: $secondary;
+.text-secondary {
+  color: $secondary;
+}
+.title {
+  font-family: $font-title;
+}
+.text {
+  font-family: $font-text;
+}
+.uppercase {
+  text-transform: uppercase;
 }

@@ -6,7 +6,7 @@ import GridLoader from "react-spinners/GridLoader";
 
 const override = css`
   display: block;
-  margin: 0 auto;
+  margin: auto;
   border-color: red;
 `;
 class PhoneCatalogue extends React.Component {

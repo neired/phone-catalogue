@@ -11,32 +11,35 @@ const PhoneDetail = props => {
     const { name, manufacturer, description, color, price, imageFileName, screen, processor, ram } = phone[0];
     return (
       <main>
-        <Link to="/">Back</Link>
+        <Link to="/" className="text text-primary">Back</Link>
         <div className="detail card">
           <div><img className="detail__img" src={`/assets/${imageFileName}`} alt={name}></img></div>
-          <div className="detail__info py-20">
-            <div className="detail__title py-20">
-              <h2 className="text-dark mx-0">{name}</h2>
-              <p className="text-dark mx-0">{manufacturer}</p>
-              <p className="text-dark mx-0">{price}</p>
+          <div className="detail__info p-20">
+            <h3 className="detail__price title text-light">{price} €</h3>
+            <div className="detail__title pb-20">
+              <h2 className="text-dark mx-0 title">{name}</h2>
+              <p className="text-dark mx-0 text">{manufacturer}</p>
             </div>
-            <div className="detail__color-container">
-              <p className="detail__color text-dark mx-0">Color: </p>
-              <div className={`bg-${color} detail__color-circle mx-0`}></div>
+            <div className="detail__color-container pb-20">
+              <p className="detail__color text-dark mx-0 text">Color: </p>
+              <div className={`bg-${color} detail__color-circle`}></div>
             </div>
-            <p className="detail__description text-dark py-20">{description}</p>
-            <div className="detail__specs-container py-20">
-              <div className="detail__spec">
+            <p className="detail__description text-dark text pb-20">{description}</p>
+            <div className="detail__specs-container">
+              <div className="detail__spec p-10">
                 <i className="fas fa-mobile-alt"></i>
-                <p className="detail__specs-text text-dark">{screen}</p>
+                <p className="text text-grey uppercase">Screen</p>
+                <p className="detail__specs-text text-dark text">{screen}</p>
               </div>
-              <div className="detail__spec">
+              <div className="detail__spec p-10">
                 <i className="fas fa-microchip"></i>
-                <p className="detail__specs-text text-dark">{processor}</p>
+                <p className="text text-grey uppercase">Processor</p>
+                <p className="detail__specs-text text-dark text">{processor}</p>
               </div>
-              <div className="detail__spec">
+              <div className="detail__spec p-10">
                 <i className="fas fa-memory"></i>
-                <p className="detail__specs-text text-dark">{ram}</p>
+                <p className="text text-grey uppercase">Ram</p>
+                <p className="detail__specs-text text-dark text">{ram}</p>
               </div>
             </div>
           </div>
