@@ -40,6 +40,7 @@ class App extends Component {
               <PhoneDetail 
                 routerProps={routerProps}
                 phones={phones}
+                loading={loading}
               />
             );
           }}/>

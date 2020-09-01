@@ -1,19 +1,58 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { css } from "@emotion/core";
+import DotLoader from "react-spinners/DotLoader";
+
+const override = css`
+  display: block;
+  margin: auto;
+`;
+
+const NoPhone = () => (
+  <main>
+    <div className="detail card">
+      <Link to="/" className="detail__back-icon text text-primary"><i class="fas fa-arrow-circle-left"></i></Link>
+      <div className="detail__info p-20">
+        <p className="detail__price title text-light title-secondary">:(</p>
+        <div className="detail__title pb-20 mx-0">
+          <h2 className="text-dark title-secondary title mx-0">Sorry, we can't find what you are looking for.</h2>
+        </div>
+        <p className="detail__description text text-grey text-primary pb-20">For some reason, the phone id you are searching for doesn't exist... yet!</p>
+      </div>
+    </div>
+  </main>
+);
 
 const PhoneDetail = props => {
-  const { routerProps, phones } = props;
+  const { routerProps, phones, loading } = props;
   const phoneId = parseInt(routerProps.match.params.phoneId);
   const phone = phones.filter(phone => phone.id === phoneId);
 
-  // refactor!
   if (phone[0]) {
     const { name, manufacturer, description, color, price, imageFileName, screen, processor, ram } = phone[0];
     return (
       <main>
+        <div className="loader">
+          <DotLoader
+            css={override}
+            size={30}
+            color={"#36D7B7"}
+            loading={loading}
+          />
+        </div>
         <div className="detail card">
           <Link to="/" className="detail__back-icon text text-primary"><i class="fas fa-arrow-circle-left"></i></Link>
-          <div><img className="detail__img" src={`/assets/${imageFileName}`} alt={name}></img></div>
+          <div>
+            {imageFileName ?
+              <img className="detail__img" src={`/assets/${imageFileName}`} alt={name}></img> :
+              <DotLoader
+                css={override}
+                size={30}
+                color={"#36D7B7"}
+                loading={loading}
+              />
+            }
+          </div>
           <div className="detail__info p-20">
             <p className="detail__price title text-light title-secondary">{price} €</p>
             <div className="detail__title pb-20 mx-0">
@@ -47,39 +86,11 @@ const PhoneDetail = props => {
       </main>
     )
   } else {
-    return (
-      <>
-        <Link to="/">Back</Link>
-        <div className="detail">
-          <div><img className="detail__img" src='PLACEHOLDER!!!' alt='placeholder'></img></div>
-          <div className="detail__info">
-            <div className="detail__title">
-              {/* que sea grisecito placeholder */}
-            </div>
-            <div className="detail__color-container">
-              <div className="detail__color-circle"></div>
-              <p className="detail__color"></p>
-              {/* que sea grisecito placeholder / pensar bien lo del circulito con el color así pasado */}
-            </div>
-            <p className="detail__description">Sorry, we don't seem to have any phone with this id.</p> 
-            <div className="detail__specs-container">
-              <div>
-                <div className="detail__specs-icon"></div>
-                <p className="detail__specs-text">{/* que sea grisecito placeholder */}</p>
-              </div>
-              <div>
-                <div className="detail__specs-icon"></div>
-                <p className="detail__specs-text">{/* que sea grisecito placeholder */}</p>
-              </div>
-              <div>
-                <div className="detail__specs-icon"></div>
-                <p className="detail__specs-text">{/* que sea grisecito placeholder */}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </>
-    )
+    if (phoneId > phones.length || phoneId < 0) {
+      return (
+        <NoPhone />
+      )
+    }
   }
 }
 
