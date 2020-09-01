@@ -6,6 +6,7 @@ import PhoneCatalogue from './PhoneCatalogue.jsx';
 import PhoneDetail from './PhoneDetail.jsx';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
+import store from '../store/store';
 
 class App extends Component {
   state = {
@@ -14,6 +15,8 @@ class App extends Component {
     error: null
   }
   componentDidMount() {
+    const state = store.getState();
+    console.log('1', state);
     axios.get('http://localhost:3000/api/phones')
       .then(res => {
         const phones = JSON.parse(JSON.stringify(res.data.phones));
