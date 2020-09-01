@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import PhoneCard from './PhoneCard.jsx';
 import { css } from "@emotion/core";
@@ -43,4 +44,10 @@ class PhoneCatalogue extends React.Component {
 
   }
 }
+
+PhoneCatalogue.propTypes = {
+  phones: PropTypes.arrayOf(PropTypes.object),
+  loading: PropTypes.bool
+};
+
 export default PhoneCatalogue;

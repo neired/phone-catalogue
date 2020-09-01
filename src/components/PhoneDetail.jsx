@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { css } from "@emotion/core";
 import DotLoader from "react-spinners/DotLoader";
@@ -93,5 +94,10 @@ const PhoneDetail = props => {
     }
   }
 }
+
+PhoneDetail.propTypes = {
+  phones: PropTypes.arrayOf(PropTypes.object),
+  loading: PropTypes.bool
+};
 
 export default PhoneDetail;

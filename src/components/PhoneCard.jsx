@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const PhoneCard = props => {
   const { name, price, imageFileName, manufacturer } = props;
@@ -13,5 +14,12 @@ const PhoneCard = props => {
     </>
   )
 }
+
+PhoneCard.propTypes = {
+  name: PropTypes.string,
+  price: PropTypes.number,
+  imageFileName: PropTypes.string,
+  manufacturer: PropTypes.string
+};
 
 export default PhoneCard;
