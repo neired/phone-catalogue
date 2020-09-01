@@ -1,16 +1,17 @@
 import {
   FETCH_PHONES_BEGIN,
   FETCH_PHONES_SUCCESS,
-  FETCH_PHONES_FAILURE
+  FETCH_PHONES_FAILURE,
+  STORE_DATA
 } from './actions';
 
 const initialState = {
-  items: [],
+  phones: [],
   loading: false,
   error: null
 };
 
-export default function phonesReducer(state = initialState, action) {
+const phonesReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_PHONES_BEGIN:
       return {
@@ -24,17 +25,25 @@ export default function phonesReducer(state = initialState, action) {
         //save phones in store when receives FETCH_PRODUCTS_SUCCESS, and set loading to false
         ...state,
         loading: false,
-        items: action.payload.phones
+        phones: action.phones
       };
     case FETCH_PHONES_FAILURE:
       return {
         //set loading flag to false when it finishes or fails, save the error to display it, and empty phones
         ...state,
         loading: false,
-        error: action.payload.error,
-        items: []
+        error: action.error,
+        phones: []
+      };
+    case STORE_DATA:
+      return {
+        ...state,
+        loading: action.loading || state.loading,
+        error: action.error || state.error,
+        phones: action.phones || state.phones
       };
 		default:
 			return state;
 	}
 };
+export default phonesReducer;
