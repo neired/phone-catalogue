@@ -3,15 +3,21 @@
 Phone Catalogue is a React SPA .
 
 ## Installation
+In order to install this project run:
 
 ```bash
 npm install
 ```
 
-## Usage
+## Deploy
+In order to run this project:
 
 ```bash
 npm run dev
 ```
 
-## License
+It will open on port [http://localhost:3000](http://localhost:3000).
+
+## Tests
+## Built With
+## Author

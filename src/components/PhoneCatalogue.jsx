@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import PhoneCard from './PhoneCard.jsx';
+import Error from './Error.jsx';
 import { css } from "@emotion/core";
 import GridLoader from "react-spinners/GridLoader";
 
@@ -11,7 +12,7 @@ const override = css`
 `;
 class PhoneCatalogue extends React.Component {
   render() {
-    const {phones, loading} = this.props;
+    const {phones, loading, error} = this.props;
     return (
       <main>
         <div className="loader">
@@ -22,6 +23,7 @@ class PhoneCatalogue extends React.Component {
             loading={loading}
           />
         </div>
+        {error && <Error error={error}/>}
         <ul className="card__list">
           {phones
             .map((phone, i) => {

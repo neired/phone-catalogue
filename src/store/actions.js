@@ -1,7 +1,6 @@
-export const FETCH_PHONES_BEGIN = 'FETCH_PHONES_BEGIN'; //Before you start the API call, you dispatch the BEGIN action.
-export const FETCH_PHONES_SUCCESS = 'FETCH_PHONES_SUCCESS'; //Then after the call succeeds, you dispatch SUCCESS with the data.
-export const FETCH_PHONES_FAILURE = 'FETCH_PHONES_FAILURE'; //If it failed instead, you dispatch FAILURE with the error.
-export const STORE_DATA = 'STORE_DATA';
+export const FETCH_PHONES_BEGIN = 'FETCH_PHONES_BEGIN';
+export const FETCH_PHONES_SUCCESS = 'FETCH_PHONES_SUCCESS';
+export const FETCH_PHONES_FAILURE = 'FETCH_PHONES_FAILURE';
 
 export const fetchPhonesBegin = () => ({
   type: FETCH_PHONES_BEGIN
@@ -9,15 +8,10 @@ export const fetchPhonesBegin = () => ({
 
 export const fetchPhonesSuccess = (phones) => ({
   type: FETCH_PHONES_SUCCESS,
-  payload: { phones }
+  payload: phones 
 });
 
-export const fetchPhonesFailuer = (error) => ({
+export const fetchPhonesFailure = (error) => ({
   type: FETCH_PHONES_FAILURE,
-  payload: { error }
+  payload: error 
 });
-
-export const storeData = () => ({
-  type: STORE_DATA,
-  payload: {phone, error}
-})
