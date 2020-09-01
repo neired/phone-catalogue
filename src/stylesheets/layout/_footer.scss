@@ -1,0 +1,27 @@
+.footer {
+  background-color: $primary;
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  p {
+    text-align: center;
+  }
+  .fas {
+    color: $white;
+    font-size: 14px;
+  }
+  @media all and (min-width: $m) {
+    padding-top: 0;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 0;
+    p {
+      margin: 0;
+    }
+  }
+}

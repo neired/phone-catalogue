@@ -1,0 +1,62 @@
+.card__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 40px;
+  margin-bottom: 30px;
+  @media all and (min-width: $xs) {
+    grid-template-columns: auto;
+  }
+  @media all and (min-width: $s) {
+    grid-template-columns: auto auto;
+  }
+  @media all and (min-width: $m) {
+    grid-template-columns: auto auto auto;
+  }
+  @media all and (min-width: $xl) {
+    grid-template-columns: auto auto auto auto;
+  }
+  .card {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+.card {
+  color: $black;
+  background-color: $white;
+  -webkit-box-shadow: 6px 6px 14px -9px $grey;
+  -moz-box-shadow: 6px 6px 14px -9px $grey;
+  box-shadow: 6px 6px 14px -9px $grey;
+  border-radius: 10px;
+  transition: transform .4s;
+}
+.card__link {
+  text-decoration: none;
+  color: $black;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+.card__img {
+  margin: 10px auto;
+  height: 150px;
+}
+.card__info-container {
+  width: 160px;
+}
+.card__price {
+  position: absolute;
+  width: 115px;
+  background: linear-gradient(336deg, $secondary 0%, $secondary-dark 100%);
+  padding: 7px 20px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 8px;
+  margin-top: -7px;
+  margin-left: 75px;
+  box-shadow: 6px 6px 14px -9px $secondary;
+  @media all and (min-width: $m) {
+    margin-top: -13px;
+  }
+}

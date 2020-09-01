@@ -1,0 +1,44 @@
+@import './core/vars';
+@import './core/colors';
+@import './core/_typography';
+@import './components/cards';
+@import './layout/footer';
+@import './layout/header';
+@import './pages/detail';
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+body {
+  background-color: $bg-white;
+  font-family: "Roboto Slab", serif;
+}
+#app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+}
+.mx-0 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.pb-20 {
+  padding-bottom: 20px;
+}
+.p-10 {
+  padding: 10px;
+}
+.p-20 {
+  padding: 20px;
+}
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

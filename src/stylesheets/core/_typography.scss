@@ -1,0 +1,57 @@
+.text-dark {
+  color: $black;
+}
+.text-grey {
+  color: $grey;
+}
+.text-light {
+  color: $white;
+}
+.text-color-primary {
+  color: $primary;
+}
+.title {
+  font-family: $font-title;
+}
+.text {
+  font-family: $font-text;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: end;
+}
+.title-primary {
+  font-size: 35px;
+  @media all and (min-width: $m) {
+    font-size: 50px;
+  }
+}
+.title-secondary {
+  font-size: 26px;
+  @media all and (min-width: $m) {
+    font-size: 30px;
+  }
+}
+.title-tertiary {
+  font-size: 20px;
+  @media all and (min-width: $m) {
+    font-size: 24px;
+  }
+}
+.text-primary {
+  font-size: 16px;
+  @media all and (min-width: $m) {
+    font-size: 18px;
+  }
+}
+.text-secondary {
+  font-size: 14px;
+  @media all and (min-width: $m) {
+    font-size: 16px;
+  }
+}
