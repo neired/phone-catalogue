@@ -34,15 +34,7 @@ const PhoneDetail = props => {
         <div className="detail card">
           <Link to="/" className="detail__back-icon text text-primary"><img src="/assets/icons/arrow-circle-left-solid.svg" alt="back to home" class="fas fa-arrow-circle-left"></img></Link>
           <div>
-            {imageFileName ?
-              <img className="detail__img" src={`/assets/${imageFileName}`} alt={name}></img> :
-              <DotLoader
-                css={override}
-                size={30}
-                color={"#36D7B7"}
-                loading={loading}
-              />
-            }
+            <img className="detail__img" src={`/assets/${imageFileName}`} alt={name}></img>
           </div>
           <div className="detail__info p-20">
             <p className="detail__price title text-light title-secondary">{price} €</p>
