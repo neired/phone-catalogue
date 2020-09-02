@@ -32,7 +32,7 @@ const PhoneDetail = props => {
           />
         </div>
         <div className="detail card">
-          <Link to="/" className="detail__back-icon text text-primary"><i class="fas fa-arrow-circle-left"></i></Link>
+          <Link to="/" className="detail__back-icon text text-primary"><img src="/assets/icons/arrow-circle-left-solid.svg" alt="back to home" class="fas fa-arrow-circle-left"></img></Link>
           <div>
             {imageFileName ?
               <img className="detail__img" src={`/assets/${imageFileName}`} alt={name}></img> :
@@ -57,17 +57,17 @@ const PhoneDetail = props => {
             <p className="detail__description text text-dark text-primary pb-20">{description}</p>
             <div className="detail__specs-container">
               <div className="detail__spec p-10">
-                <i className="fas fa-mobile-alt"></i>
+                <img src="/assets/icons/mobile-alt-solid.svg" alt="screen" className="fas"></img>
                 <p className="text text-grey uppercase text-secondary">Screen</p>
                 <p className="detail__specs-text text-dark text text-secondary">{screen}</p>
               </div>
               <div className="detail__spec p-10">
-                <i className="fas fa-microchip"></i>
+                <img src="/assets/icons/microchip-solid.svg" alt="processor" className="fas"></img>
                 <p className="text text-grey uppercase text-secondary">Processor</p>
                 <p className="detail__specs-text text-dark text text-secondary">{processor}</p>
               </div>
               <div className="detail__spec p-10">
-                <i className="fas fa-memory"></i>
+                <img src="/assets/icons/memory-solid.svg" alt="ram" className="fas"></img>
                 <p className="text text-grey uppercase text-secondary">Ram</p>
                 <p className="detail__specs-text text-dark text text-secondary">{ram}</p>
               </div>
