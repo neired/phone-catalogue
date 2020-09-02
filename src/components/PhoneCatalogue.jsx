@@ -15,7 +15,7 @@ class PhoneCatalogue extends React.Component {
     const {phones, loading, error} = this.props;
     return (
       <main>
-        <div className="loader">
+        <div className="loader" data-testid="loader">
           <GridLoader
             css={override}
             size={30}
