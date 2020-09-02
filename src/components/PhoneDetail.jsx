@@ -15,11 +15,7 @@ const PhoneDetail = props => {
   const phoneId = parseInt(routerProps.match.params.phoneId);
   const phone = phones.filter(phone => phone.id === phoneId);
 
-  if (phone.length === 0) {
-    return (
-      <NoPhone />
-    )
-  } else {
+  if (phone[0]) {
     const { name, manufacturer, description, color, price, imageFileName, screen, processor, ram } = phone[0];
     return (
       <main>
@@ -67,6 +63,10 @@ const PhoneDetail = props => {
           </div>
         </div>
       </main>
+    )
+  } else {
+    return (
+      <NoPhone loading={loading}/>
     )
   }
 }
