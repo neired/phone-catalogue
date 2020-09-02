@@ -26,7 +26,7 @@ class App extends Component {
   }
   componentDidMount() {
     this.props.fetchPhonesBegin();
-    let siteUrl = __DEV__ ? 'http://localhost:3000' : 'https://neired.github.io/phone-catalogue';
+    let siteUrl = 'https://neired.github.io/phone-catalogue';
     axios.get(`'${siteUrl}/api/phones'`)
     .then(res => {
         const phones = JSON.parse(JSON.stringify(res.data.phones));
