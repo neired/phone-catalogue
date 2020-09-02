@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const phones = require('./phones.json');
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/docs'));
 
 app.get('/api/phones', (req, res) => {
   res.status(200).json({
