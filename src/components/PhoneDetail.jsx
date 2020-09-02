@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import NoPhone from './NoPhone.jsx';
 import { css } from "@emotion/core";
 import DotLoader from "react-spinners/DotLoader";
 
@@ -9,27 +10,16 @@ const override = css`
   margin: auto;
 `;
 
-const NoPhone = () => (
-  <main>
-    <div className="detail card">
-      <Link to="/" className="detail__back-icon text text-primary"><i class="fas fa-arrow-circle-left"></i></Link>
-      <div className="detail__info p-20">
-        <p className="detail__price title text-light title-secondary">:(</p>
-        <div className="detail__title pb-20 mx-0">
-          <h2 className="text-dark title-secondary title mx-0">Sorry, we can't find what you are looking for.</h2>
-        </div>
-        <p className="detail__description text text-grey text-primary pb-20">For some reason, the phone id you are searching for doesn't exist... yet!</p>
-      </div>
-    </div>
-  </main>
-);
-
 const PhoneDetail = props => {
   const { routerProps, phones, loading } = props;
   const phoneId = parseInt(routerProps.match.params.phoneId);
   const phone = phones.filter(phone => phone.id === phoneId);
 
-  if (phone[0]) {
+  if (phone.length === 0) {
+    return (
+      <NoPhone />
+    )
+  } else {
     const { name, manufacturer, description, color, price, imageFileName, screen, processor, ram } = phone[0];
     return (
       <main>
@@ -86,12 +76,6 @@ const PhoneDetail = props => {
         </div>
       </main>
     )
-  } else {
-    if (phoneId > phones.length || phoneId < 0) {
-      return (
-        <NoPhone />
-      )
-    }
   }
 }
 
