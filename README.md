@@ -23,7 +23,10 @@ npm run dev
 - **Webpack**
 
 ## Rest API
-The REST API created has one endpoint: `/phones` and it returns the phones data.
+The REST API created is based on [Nodejs](https://nodejs.org/en/) and has one endpoint.
+| HTTP verb |   URI   | Action           |
+|:---------:|:-------:|:----------------:|
+| GET       | /phones | lists all phones |
 
 ## Built With
 On the server side:
