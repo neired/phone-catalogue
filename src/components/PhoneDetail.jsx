@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import NoPhone from './NoPhone.jsx';
 import { css } from "@emotion/core";
 import DotLoader from "react-spinners/DotLoader";
 
@@ -8,21 +9,6 @@ const override = css`
   display: block;
   margin: auto;
 `;
-
-const NoPhone = () => (
-  <main>
-    <div className="detail card">
-      <Link to="/" className="detail__back-icon text text-primary"><i class="fas fa-arrow-circle-left"></i></Link>
-      <div className="detail__info p-20">
-        <p className="detail__price title text-light title-secondary">:(</p>
-        <div className="detail__title pb-20 mx-0">
-          <h2 className="text-dark title-secondary title mx-0">Sorry, we can't find what you are looking for.</h2>
-        </div>
-        <p className="detail__description text text-grey text-primary pb-20">For some reason, the phone id you are searching for doesn't exist... yet!</p>
-      </div>
-    </div>
-  </main>
-);
 
 const PhoneDetail = props => {
   const { routerProps, phones, loading } = props;
@@ -42,17 +28,9 @@ const PhoneDetail = props => {
           />
         </div>
         <div className="detail card">
-          <Link to="/" className="detail__back-icon text text-primary"><i class="fas fa-arrow-circle-left"></i></Link>
+          <Link to="/" className="detail__back-icon text text-primary"><img src="/assets/icons/arrow-circle-left-solid.svg" alt="back to home" class="fas fa-arrow-circle-left"></img></Link>
           <div>
-            {imageFileName ?
-              <img className="detail__img" src={`/assets/${imageFileName}`} alt={name}></img> :
-              <DotLoader
-                css={override}
-                size={30}
-                color={"#36D7B7"}
-                loading={loading}
-              />
-            }
+            <img className="detail__img" src={`/assets/${imageFileName}`} alt={name}></img>
           </div>
           <div className="detail__info p-20">
             <p className="detail__price title text-light title-secondary">{price} €</p>
@@ -67,17 +45,17 @@ const PhoneDetail = props => {
             <p className="detail__description text text-dark text-primary pb-20">{description}</p>
             <div className="detail__specs-container">
               <div className="detail__spec p-10">
-                <i className="fas fa-mobile-alt"></i>
+                <img src="/assets/icons/mobile-alt-solid.svg" alt="screen" className="fas"></img>
                 <p className="text text-grey uppercase text-secondary">Screen</p>
                 <p className="detail__specs-text text-dark text text-secondary">{screen}</p>
               </div>
               <div className="detail__spec p-10">
-                <i className="fas fa-microchip"></i>
+                <img src="/assets/icons/microchip-solid.svg" alt="processor" className="fas"></img>
                 <p className="text text-grey uppercase text-secondary">Processor</p>
                 <p className="detail__specs-text text-dark text text-secondary">{processor}</p>
               </div>
               <div className="detail__spec p-10">
-                <i className="fas fa-memory"></i>
+                <img src="/assets/icons/memory-solid.svg" alt="ram" className="fas"></img>
                 <p className="text text-grey uppercase text-secondary">Ram</p>
                 <p className="detail__specs-text text-dark text text-secondary">{ram}</p>
               </div>
@@ -87,11 +65,9 @@ const PhoneDetail = props => {
       </main>
     )
   } else {
-    if (phoneId > phones.length || phoneId < 0) {
-      return (
-        <NoPhone />
-      )
-    }
+    return (
+      <NoPhone loading={loading}/>
+    )
   }
 }
 

@@ -3,7 +3,7 @@
 Phone Catalogue is a React SPA .
 
 ## Installation
-In order to install this project run:
+In order to install all dependencies neeeded for this project run:
 
 ```bash
 npm install
