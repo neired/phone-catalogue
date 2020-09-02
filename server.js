@@ -1,4 +1,3 @@
-//se encarga de enviar a través de express al cliente la carpeta public
 const express = require('express');
 const app = express();
 const phones = require('./phones.json');
