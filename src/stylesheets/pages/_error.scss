@@ -1,0 +1,10 @@
+.detail__error-tag {
+    position: absolute;
+    background: linear-gradient(336deg, $secondary 0%, $secondary-dark 100%);
+    padding: 14px 20px;
+    display: inline-block;
+    border-radius: 8px;
+    right: -30px;
+    top: -18px;
+    box-shadow: 6px 6px 14px -9px $secondary;
+  }

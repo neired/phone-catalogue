@@ -6,6 +6,7 @@ import PhoneCatalogue from './PhoneCatalogue.jsx';
 import PhoneDetail from './PhoneDetail.jsx';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
+import Error from './Error.jsx';
 import { connect } from 'react-redux';
 import { fetchPhonesBegin, fetchPhonesSuccess, fetchPhonesFailure } from '../store/actions';
 
@@ -56,6 +57,13 @@ class App extends Component {
               />
             );
           }}/>
+          <Route render={ ()=>{
+            return (
+              <main>
+                <Error error={error || "Page not found."}/>
+              </main>
+            );
+          }} />
         </Switch>
         <Footer/>
       </>
