@@ -25,6 +25,17 @@ npm run dev
 - **Webpack** bundles JS files for usage in the browser.
 - The `server.js` file redirects to the public folder, with our `index.html`, which loads all javascript needed for the client side.
 
+## Run PhoneCatalogue via Docker
+- As a prerequisite, [Docker](https://www.docker.com/) must be installed in your machine.
+
+- From root directory run:
+```
+docker build -t phone-catalogue .
+docker run -d phone-catalogue
+```
+
+Once the install is complete, open a browser and point to [http://localhost:3000](http://localhost:3000) to get started.
+
 ## Rest API
 The REST API created is based on [Nodejs](https://nodejs.org/en/) and has one endpoint.
 | HTTP verb |   URI   | Action           |
